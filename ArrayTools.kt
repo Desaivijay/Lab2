@@ -52,3 +52,16 @@ fun caesarCipher(string: String, shift: Int): String {
         println("Array: ${array.joinToString()}")
         println("Average: ${array.average()}")
     }
+
+    fun arrayContains() {
+        val array = intArrayOf(1, 2, 3, 4, 5)
+        print("Enter a search value: ")
+        val search = readLine()!!.toInt()
+        println("Array contains $search: ${search in array}")
+    }
+
+    fun reverseArray() {
+        val array = arrayOf(1, 2, 3, 4, 5)
+        println("Array: ${array.joinToString()}")
+        println("Reversed Array: ${array.reversed().joinToString()}")
+    }
