@@ -30,3 +30,25 @@ fun encrypt() {
     val shift = readLine()!!.toInt()
         println("Encrypted string: ${caesarCipher(string, shift)}")
     }
+fun caesarCipher(string: String, shift: Int): String {
+        val alphabet = 'a'..'z'
+        val alphabetUpper = 'A'..'Z'
+        return string.map {
+            when {
+                it in alphabet -> {
+                    val shifted = it + shift
+                    if (shifted > 'z') (shifted - 'z'.code + 'a'.code - 1).toChar() else shifted
+                }
+                it in alphabetUpper -> {
+                    val shifted = it + shift
+                    if (shifted > 'Z') (shifted - 'Z'.code + 'A'.code - 1).toChar() else shifted
+                }
+                else -> it
+            }
+        }.joinToString("")
+    }
+    fun arrayAvg() {
+        val array = IntArray(10) { Random.nextInt(100) }
+        println("Array: ${array.joinToString()}")
+        println("Average: ${array.average()}")
+    }
